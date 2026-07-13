@@ -7,7 +7,7 @@
 <h1 align="center">Sajad Khanmirzaei</h1>
 
 <p align="center">
-  Full-Stack Developer&nbsp; ·&nbsp; DevOps Engineer&nbsp; ·&nbsp; Applied AI&nbsp; ·&nbsp; Co-founder of <a href="https://hiprax.com">Hiprax</a>
+  Full-Stack Developer&nbsp; ·&nbsp; DevOps Engineer&nbsp; ·&nbsp; Applied AI&nbsp; ·&nbsp; Founder &amp; CEO of <a href="https://hiprax.com">Hiprax</a>
 </p>
 
 <p align="center">
@@ -15,7 +15,6 @@
   <a href="https://github.com/Sajadlance"><img alt="GitHub" height="28" src="https://img.shields.io/badge/GitHub-0a0a0a?style=for-the-badge&logo=github&logoColor=white" /></a>
   <a href="https://hiprax.com"><img alt="Website" height="28" src="https://img.shields.io/badge/hiprax.com-6366F1?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
   <a href="https://www.npmjs.com/~hiprax"><img alt="npm packages" height="28" src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" /></a>
-  <a href="https://x.com/hiprax"><img alt="X" height="28" src="https://img.shields.io/badge/X-0a0a0a?style=for-the-badge&logo=x&logoColor=white" /></a>
   <a href="mailto:info@hiprax.com"><img alt="Email" height="28" src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 </p>
 
@@ -25,7 +24,7 @@
 
 ## ~/about
 
-I'm Sajad, a full-stack developer and DevOps engineer based in Spain. I co-founded **[Hiprax](https://hiprax.com)**, a small senior team that ships scalable, secure, and fast web applications end to end, from the database and infrastructure up to the last pixel.
+I'm Sajad, a full-stack developer and DevOps engineer based in Spain. I'm the founder and CEO of **[Hiprax](https://hiprax.com)**, a small senior team that ships scalable, secure, and fast web applications end to end, from the database and infrastructure up to the last pixel.
 
 My work sits where production web engineering meets applied AI. I build MERN-stack platforms, design the cloud and CI/CD they run on, harden them against real-world abuse, and increasingly wire them up to language models: retrieval-augmented generation, autonomous agents, voice interfaces, and the unglamorous plumbing that makes any of it reliable in production.
 
@@ -94,15 +93,17 @@ A dozen more, from real-estate auction intelligence and government e-signature a
 
 ## ~/open-source
 
-I help build and maintain free, public packages under the **[`@hiprax`](https://www.npmjs.com/~hiprax)** scope, used by developers worldwide.
+I build and maintain free, public npm packages, several under the **[`@hiprax`](https://www.npmjs.com/~hiprax)** scope, used by developers worldwide.
 
 | Package | What it gives you |
 | :-- | :-- |
 | **[`@hiprax/crypto`](https://www.npmjs.com/package/@hiprax/crypto)** <br> [![npm version](https://img.shields.io/npm/v/@hiprax/crypto?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/@hiprax/crypto) [![downloads](https://img.shields.io/npm/dw/@hiprax/crypto?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/@hiprax/crypto) | AES-256-GCM authenticated encryption with Argon2id key derivation, file streaming, constant-time comparisons, and strict TypeScript types. |
 | **[`hppx`](https://www.npmjs.com/package/hppx)** <br> [![npm version](https://img.shields.io/npm/v/hppx?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/hppx) [![downloads](https://img.shields.io/npm/dw/hppx?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/hppx) | Next-gen HTTP Parameter Pollution shield for Express: blocks prototype pollution, null-byte injection, and DoS vectors with nested whitelists. |
-| **[`pixel-serve-server`](https://www.npmjs.com/package/pixel-serve-server)** <br> [![npm version](https://img.shields.io/npm/v/pixel-serve-server?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/pixel-serve-server) [![downloads](https://img.shields.io/npm/dw/pixel-serve-server?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/pixel-serve-server) | Sharp-powered image optimization to AVIF and WebP, plus a React client with automatic srcset, lazy loading, and SSR safety. |
+| **[`pixel-serve-server`](https://www.npmjs.com/package/pixel-serve-server)** <br> [![npm version](https://img.shields.io/npm/v/pixel-serve-server?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/pixel-serve-server) [![downloads](https://img.shields.io/npm/dw/pixel-serve-server?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/pixel-serve-server) | Sharp-powered image optimization middleware: on-the-fly AVIF and WebP conversion, resizing, strict path validation, and smart caching. |
+| **[`pixel-serve-client`](https://www.npmjs.com/package/pixel-serve-client)** <br> [![npm version](https://img.shields.io/npm/v/pixel-serve-client?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/pixel-serve-client) [![downloads](https://img.shields.io/npm/dw/pixel-serve-client?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/pixel-serve-client) | The React half of Pixel Serve: multi-format srcset, lazy loading, a built-in skeleton loader, and SSR-safe fallbacks. |
 | **[`@hiprax/use-seo`](https://www.npmjs.com/package/@hiprax/use-seo)** <br> [![npm version](https://img.shields.io/npm/v/@hiprax/use-seo?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/@hiprax/use-seo) [![downloads](https://img.shields.io/npm/dw/@hiprax/use-seo?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/@hiprax/use-seo) | One React hook for titles, Open Graph, Twitter Cards, hreflang, and JSON-LD structured data. SSR-safe and fully tested. |
 | **[`@hiprax/logger`](https://www.npmjs.com/package/@hiprax/logger)** <br> [![npm version](https://img.shields.io/npm/v/@hiprax/logger?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/@hiprax/logger) [![downloads](https://img.shields.io/npm/dw/@hiprax/logger?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/@hiprax/logger) | Winston-based structured logging with daily rotation, verified IANA timezones, and an Express middleware that masks secrets automatically. |
+| **[`@hiprax/errors`](https://www.npmjs.com/package/@hiprax/errors)** <br> [![npm version](https://img.shields.io/npm/v/@hiprax/errors?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/@hiprax/errors) [![downloads](https://img.shields.io/npm/dw/@hiprax/errors?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/@hiprax/errors) | Modular error handling for Express.js: structured, typed error classes and consistent API error responses. |
 
 ## ~/principles
 
