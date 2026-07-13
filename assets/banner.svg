@@ -37,12 +37,6 @@
       <stop offset="1" stop-color="#f472b6" stop-opacity="0"/>
     </radialGradient>
 
-    <clipPath id="roleReveal">
-      <rect x="70" y="224" width="0" height="30">
-        <animate attributeName="width" values="0;640" keyTimes="0;1" keySplines="0.2 0.8 0.2 1" calcMode="spline" dur="1.6s" begin="1.1s" fill="freeze"/>
-      </rect>
-    </clipPath>
-
     <style>
       .mono { font-family: 'JetBrains Mono','SFMono-Regular','Cascadia Code',Consolas,'Liberation Mono',Menlo,monospace; }
 
@@ -50,7 +44,7 @@
       .name-in  { opacity: 0; animation: fadeIn 0.9s ease-out 0.5s forwards; }
       .role-in  { opacity: 0; animation: fadeIn 0.5s ease-out 1.1s forwards; }
       .status-in{ opacity: 0; animation: fadeUp 0.7s ease-out 2.7s forwards; }
-      .cursor   { animation: blink 1.05s steps(1) 2.75s infinite; }
+      .cursor   { animation: blink 1.05s steps(1) 1.6s infinite; }
       .pulseDot { transform-box: fill-box; transform-origin: center; animation: statusPulse 2s ease-in-out infinite; }
 
       /* Flowing headline: phase-shifted stop-color cycle (CSS, so it honours reduced motion) */
@@ -121,9 +115,7 @@
 
     <!-- Typed role line with a trailing block cursor that always follows the text -->
     <g class="role-in">
-      <g clip-path="url(#roleReveal)">
-        <text class="mono" x="70" y="246" font-size="18" fill="#ffffff" fill-opacity="0.82">Full-Stack Developer &#183; DevOps Engineer &#183; Applied AI<tspan class="cursor" dx="4" fill="#22d3ee" fill-opacity="1">&#9608;</tspan></text>
-      </g>
+      <text class="mono" x="70" y="246" font-size="18" fill="#ffffff" fill-opacity="0.82">Full-Stack Developer &#183; DevOps Engineer &#183; Applied AI<tspan class="cursor" dx="4" fill="#22d3ee" fill-opacity="1">&#9608;</tspan></text>
     </g>
 
     <!-- Status pills -->
