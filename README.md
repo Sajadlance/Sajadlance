@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD013 MD033 MD041 -->
 
 <div align="center">
-  <img alt="Sajad Khanmirzaei: Full-Stack Developer, DevOps Engineer and Applied AI. Open to opportunities, based in Spain." src="assets/banner.svg" width="100%" />
+  <a href="https://hiprax.com"><img alt="Sajad Khanmirzaei: Full-Stack Developer, DevOps Engineer and Applied AI. Open to opportunities." src="assets/banner.svg" width="100%" /></a>
 </div>
 
 <h1 align="center">Sajad Khanmirzaei</h1>
@@ -11,11 +11,10 @@
 </p>
 
 <p align="center">
-  <a href="https://linkedin.com/in/sajadkhmz"><img alt="LinkedIn" height="28" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="https://github.com/Sajadlance"><img alt="GitHub" height="28" src="https://img.shields.io/badge/GitHub-0a0a0a?style=for-the-badge&logo=github&logoColor=white" /></a>
   <a href="https://hiprax.com"><img alt="Website" height="28" src="https://img.shields.io/badge/hiprax.com-6366F1?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
   <a href="https://www.npmjs.com/~hiprax"><img alt="npm packages" height="28" src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" /></a>
-  <a href="mailto:info@hiprax.com"><img alt="Email" height="28" src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+  <a href="https://linkedin.com/in/sajadkhmz"><img alt="LinkedIn" height="28" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+  <a href="mailto:sajad@hiprax.com"><img alt="Email" height="28" src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 </p>
 
 <div align="center">
@@ -24,86 +23,74 @@
 
 ## ~/about
 
-I'm Sajad, a full-stack developer and DevOps engineer based in Spain. I'm the founder and CEO of **[Hiprax](https://hiprax.com)**, a small senior team that ships scalable, secure, and fast web applications end to end, from the database and infrastructure up to the last pixel.
+I build web applications end to end, and then I keep them alive.
 
-My work sits where production web engineering meets applied AI. I build MERN-stack platforms, design the cloud and CI/CD they run on, harden them against real-world abuse, and increasingly wire them up to language models: retrieval-augmented generation, autonomous agents, voice interfaces, and the unglamorous plumbing that makes any of it reliable in production.
+That second half is where it gets interesting. Shipping a demo is easy. Surviving real traffic, a bored attacker, and a bad deploy on a Friday afternoon is a different job, and it's the one I actually like. I founded **[Hiprax](https://hiprax.com)** to do that work with two engineers I've known for years.
 
-Over a decade and 60+ shipped projects later, I've delivered for startups and enterprises alike, and every client has come back for more. That is the only metric I really trust.
+Most of my time now goes to the seam between production engineering and applied AI: retrieval pipelines, agents that take real actions, voice interfaces, and the deeply unglamorous plumbing that keeps them predictable on the days a model decides to get creative.
 
-## ~/focus
+Ten years and sixty-odd projects in, every client has come back for more. That's the metric I care about.
 
-What I actually do, and where I add the most value:
+## ~/how-i-ship
 
-| Area | What it means in practice |
-| :-- | :-- |
-| **Full-stack web apps** | End-to-end product engineering on the MERN stack and modern React / Next.js, from schema to UI. |
-| **DevOps &amp; cloud** | The infrastructure it all runs on: Docker, Kubernetes, Nginx, CI/CD, and hardened Linux servers. |
-| **Applied AI** | RAG pipelines, LLM-powered agents, voice interfaces, and the production plumbing that keeps them reliable. |
-| **Security** | Auth, encryption, API hardening, and audits, treated as a first-class requirement rather than an afterthought. |
+<div align="center">
+  <img alt="The architecture I ship on: a client request travels through Cloudflare to Nginx on the host, which terminates TLS and proxies to a single port bound to 127.0.0.1. Inside the Docker Compose boundary an internal Nginx routes to the app, which reads and writes MongoDB and enqueues jobs on Redis for a worker to consume." src="assets/architecture.svg" width="100%" />
+</div>
 
-## ~/stack
+Every project I take on gets deployed the same shape. One compose file, one root `.env`, one port on the loopback interface, and an Nginx on the host holding the only certificate. There is exactly one door into the stack, and everything else talks over the compose network where the internet can't reach it.
 
-My core toolkit, by layer:
+Here's the detail that decides it. Publish a container port without binding it to `127.0.0.1` and Docker DNATs it in the `nat` table before your firewall ever gets a say. The packet is routed through `FORWARD`, where Docker's own rules accept it, and never reaches the `INPUT` chain where your `ufw` rules live. So the port you believe is closed is open to the whole internet, and `ufw status` will happily tell you it's blocked. Plenty of "firewalled" stacks are wide open for exactly this reason.
 
-| Layer | Tools |
-| :-- | :-- |
-| **Frontend** | ![Frontend: React, TypeScript, JavaScript, Next.js, Three.js, HTML, CSS, Tailwind](https://skillicons.dev/icons?i=react,ts,js,nextjs,threejs,html,css,tailwind&theme=dark) |
-| **Backend** | ![Backend: Node.js, Express, FastAPI, Python, Django](https://skillicons.dev/icons?i=nodejs,express,fastapi,py,django&theme=dark) |
-| **Data** | ![Databases: MongoDB, Redis, PostgreSQL, MySQL, SQLite, Elasticsearch](https://skillicons.dev/icons?i=mongodb,redis,postgres,mysql,sqlite,elasticsearch&theme=dark) |
-| **DevOps &amp; Cloud** | ![DevOps and cloud: Linux, Docker, Nginx, Kubernetes, Git, GitHub, GitLab, Cloudflare, AWS, GitHub Actions](https://skillicons.dev/icons?i=linux,docker,nginx,kubernetes,git,github,gitlab,cloudflare,aws,githubactions&theme=dark) |
-
-Also in the toolbox when a project calls for it: Vue, Svelte, Angular, Flask, PHP, and Laravel.
-
-And the specialties that logos don't quite capture, where most of my recent work lives:
-
-<p align="center">
-  <img alt="OpenAI" src="https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white" />
-  <img alt="LangChain" src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white" />
-  <img alt="Retrieval-Augmented Generation" src="https://img.shields.io/badge/RAG-8B5CF6?style=flat-square&logoColor=white" />
-  <img alt="Prompt Engineering" src="https://img.shields.io/badge/Prompt%20Engineering-F59E0B?style=flat-square&logoColor=white" />
-  <img alt="Hugging Face" src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black" />
-  <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
-  <img alt="TensorFlow" src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" />
-  <img alt="Computer Vision" src="https://img.shields.io/badge/Computer%20Vision-00B4D8?style=flat-square&logo=opencv&logoColor=white" />
-</p>
-
-<p align="center">
-  <img alt="OWASP" src="https://img.shields.io/badge/OWASP-4051B5?style=flat-square&logo=owasp&logoColor=white" />
-  <img alt="OAuth and JWT" src="https://img.shields.io/badge/OAuth%20%2F%20JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white" />
-  <img alt="Penetration Testing" src="https://img.shields.io/badge/Penetration%20Testing-EF4444?style=flat-square&logoColor=white" />
-  <img alt="Encryption" src="https://img.shields.io/badge/Encryption-F19A2A?style=flat-square&logoColor=white" />
-  <img alt="SSL and TLS" src="https://img.shields.io/badge/SSL%2FTLS-00A98F?style=flat-square&logo=letsencrypt&logoColor=white" />
-  <img alt="API Security" src="https://img.shields.io/badge/API%20Security-FF3366?style=flat-square&logoColor=white" />
-</p>
+None of this is clever, and that's the point. I can rebuild it on a bare VPS in an afternoon, and so can whoever inherits it from me.
 
 ## ~/work
 
-A few of the products I've built with Hiprax:
+Products I've built with Hiprax. Most are under NDA, so these are the shapes rather than the client names.
 
 | Project | What it does | Stack |
 | :-- | :-- | :-- |
-| **AI Print-on-Demand Studio** | Generate original artwork from prompts, refine it in a full in-browser design editor, then order it on real products. | MERN · Fabric.js · Socket.io · GenAI |
+| **AI Print-on-Demand Studio** | Generate original artwork from a prompt, refine it in a full in-browser design editor, then order it on real products. | MERN · Fabric.js · Socket.io · GenAI |
 | **AI Political Transparency** | Aggregates political news and fact-checks live speech in real time, with a conversational AI for civic questions. | MERN · WebSocket / SSE · AI |
-| **Omnichannel AI Sales** | Businesses train custom AI agents that run SMS and voice outreach and close deals on their own. | MERN · Stripe · AI |
+| **Omnichannel AI Sales** | A subscription CRM where businesses train custom AI agents that run SMS and voice outreach and close deals on their own. | MERN · Stripe · AI |
 | **Conversational AI Ordering** | Human-like voice AI that answers restaurant calls and takes orders through natural conversation. | Python · TensorFlow · Transformers · FastAPI |
 | **Financial Fraud Prevention** | Real-time verification so people can tell a genuine bank contact from an impersonation scam. | Node · React · REST |
-| **Vending Ops Platform** | End-to-end fleet operations: inventory, dispatch, logistics, and billing on a subscription model. | MERN · Stripe |
+| **Stereoscopic 3D Streaming** | Dual-camera live pipeline with intelligent object alignment for real-time stereoscopic display. | Computer Vision · Streaming |
 
-A dozen more, from real-estate auction intelligence and government e-signature automation in Spain to stereoscopic 3D computer-vision pipelines, live at **[hiprax.com](https://hiprax.com)**.
+<details>
+<summary><b>The full list — the 23 I can name</b></summary>
+
+AI Company Showcase & Marketing Website · AI Market Intelligence Suite · AI Print-on-Demand Design Studio · AI-Powered Investment Signal Platform · AI-Powered Political Transparency Platform · Advanced HTTP Parameter Pollution Shield · Conversational AI Ordering System · Dynamic Audio Visualization Engine · Enterprise Admin Dashboard UI Kit · Enterprise-Grade Encryption Library · Financial Fraud Prevention Platform · Full-Stack Image Processing & Delivery System · Full-Stack Ticketing & Support Management System · Government Document Automation Suite · Omnichannel AI Sales Engagement Platform · Peer-to-Peer Storage Marketplace · Production-Grade Structured Logging Toolkit for Node.js · React SEO Management Hook · Real Estate Auction Intelligence System · Real-Time Penny Auction Platform · Social Engagement Rewards Platform · Stereoscopic 3D Streaming System · Vending Machine Operations Platform
+
+Five of them are open source; you can read every line in the next section. The rest live at **[hiprax.com](https://hiprax.com/#projects)**.
+
+</details>
 
 ## ~/open-source
 
-I build and maintain free, public npm packages, several under the **[`@hiprax`](https://www.npmjs.com/~hiprax)** scope, used by developers worldwide.
+Seven packages on **[npm](https://www.npmjs.com/~hiprax)** — four under the `@hiprax` scope, three unscoped — all MIT. Around 11,600 downloads in the last year: modest, real, and not a vanity number. `@hiprax/crypto` and `@hiprax/logger` publish from CI through npm's OIDC trusted publishing, so no token ever touches a laptop.
 
 | Package | What it gives you |
 | :-- | :-- |
-| **[`@hiprax/crypto`](https://www.npmjs.com/package/@hiprax/crypto)** <br> [![npm version](https://img.shields.io/npm/v/@hiprax/crypto?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/@hiprax/crypto) [![downloads per year](https://img.shields.io/npm/dy/@hiprax/crypto?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/@hiprax/crypto) | AES-256-GCM authenticated encryption with Argon2id key derivation, file streaming, constant-time comparisons, and strict TypeScript types. |
-| **[`hppx`](https://www.npmjs.com/package/hppx)** <br> [![npm version](https://img.shields.io/npm/v/hppx?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/hppx) [![downloads per year](https://img.shields.io/npm/dy/hppx?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/hppx) | Next-gen HTTP Parameter Pollution shield for Express: blocks prototype pollution, null-byte injection, and DoS vectors with nested whitelists. |
-| **[`pixel-serve-server`](https://www.npmjs.com/package/pixel-serve-server)** <br> [![npm version](https://img.shields.io/npm/v/pixel-serve-server?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/pixel-serve-server) [![downloads per year](https://img.shields.io/npm/dy/pixel-serve-server?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/pixel-serve-server) | Sharp-powered image optimization middleware: on-the-fly AVIF and WebP conversion, resizing, strict path validation, and smart caching. |
-| **[`pixel-serve-client`](https://www.npmjs.com/package/pixel-serve-client)** <br> [![npm version](https://img.shields.io/npm/v/pixel-serve-client?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/pixel-serve-client) [![downloads per year](https://img.shields.io/npm/dy/pixel-serve-client?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/pixel-serve-client) | The React half of Pixel Serve: multi-format srcset, lazy loading, a built-in skeleton loader, and SSR-safe fallbacks. |
-| **[`@hiprax/use-seo`](https://www.npmjs.com/package/@hiprax/use-seo)** <br> [![npm version](https://img.shields.io/npm/v/@hiprax/use-seo?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/@hiprax/use-seo) [![downloads per year](https://img.shields.io/npm/dy/@hiprax/use-seo?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/@hiprax/use-seo) | One React hook for titles, Open Graph, Twitter Cards, hreflang, and JSON-LD structured data. SSR-safe and fully tested. |
-| **[`@hiprax/logger`](https://www.npmjs.com/package/@hiprax/logger)** <br> [![npm version](https://img.shields.io/npm/v/@hiprax/logger?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/@hiprax/logger) [![downloads per year](https://img.shields.io/npm/dy/@hiprax/logger?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/@hiprax/logger) | Winston-based structured logging with daily rotation, verified IANA timezones, and an Express middleware that masks secrets automatically. |
-| **[`@hiprax/errors`](https://www.npmjs.com/package/@hiprax/errors)** <br> [![npm version](https://img.shields.io/npm/v/@hiprax/errors?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/@hiprax/errors) [![downloads per year](https://img.shields.io/npm/dy/@hiprax/errors?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/@hiprax/errors) | Modular error handling for Express.js: structured, typed error classes and consistent API error responses. |
+| **[`@hiprax/crypto`](https://www.npmjs.com/package/@hiprax/crypto)** <br> [![npm version](https://img.shields.io/npm/v/@hiprax/crypto?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/@hiprax/crypto) [![downloads per year](https://img.shields.io/npm/dy/@hiprax/crypto?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/@hiprax/crypto) [![source](https://img.shields.io/badge/source-0a0a0a?style=flat-square&logo=github&logoColor=white)](https://github.com/Hiprax/crypto) | AES-256-GCM authenticated encryption with Argon2id key derivation, file streaming, and constant-time comparison. Zero runtime dependencies. |
+| **[`hppx`](https://www.npmjs.com/package/hppx)** <br> [![npm version](https://img.shields.io/npm/v/hppx?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/hppx) [![downloads per year](https://img.shields.io/npm/dy/hppx?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/hppx) [![source](https://img.shields.io/badge/source-0a0a0a?style=flat-square&logo=github&logoColor=white)](https://github.com/Hiprax/hppx) | HTTP Parameter Pollution shield for Express: blocks prototype pollution, null-byte injection, and DoS vectors with nested whitelists. |
+| **[`pixel-serve-server`](https://www.npmjs.com/package/pixel-serve-server)** <br> [![npm version](https://img.shields.io/npm/v/pixel-serve-server?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/pixel-serve-server) [![downloads per year](https://img.shields.io/npm/dy/pixel-serve-server?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/pixel-serve-server) [![source](https://img.shields.io/badge/source-0a0a0a?style=flat-square&logo=github&logoColor=white)](https://github.com/Hiprax/pixel-serve-server) | Sharp-powered image middleware: on-the-fly AVIF and WebP conversion, resizing, strict path validation, smart caching. |
+| **[`pixel-serve-client`](https://www.npmjs.com/package/pixel-serve-client)** <br> [![npm version](https://img.shields.io/npm/v/pixel-serve-client?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/pixel-serve-client) [![downloads per year](https://img.shields.io/npm/dy/pixel-serve-client?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/pixel-serve-client) [![source](https://img.shields.io/badge/source-0a0a0a?style=flat-square&logo=github&logoColor=white)](https://github.com/Hiprax/pixel-serve-client) | The React half of Pixel Serve: multi-format srcset, lazy loading, a skeleton loader, SSR-safe fallbacks. |
+| **[`@hiprax/use-seo`](https://www.npmjs.com/package/@hiprax/use-seo)** <br> [![npm version](https://img.shields.io/npm/v/@hiprax/use-seo?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/@hiprax/use-seo) [![downloads per year](https://img.shields.io/npm/dy/@hiprax/use-seo?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/@hiprax/use-seo) [![source](https://img.shields.io/badge/source-0a0a0a?style=flat-square&logo=github&logoColor=white)](https://github.com/Hiprax/use-seo) | One React hook for titles, Open Graph, Twitter Cards, hreflang, and JSON-LD. SSR-safe and fully tested. |
+| **[`@hiprax/logger`](https://www.npmjs.com/package/@hiprax/logger)** <br> [![npm version](https://img.shields.io/npm/v/@hiprax/logger?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/@hiprax/logger) [![downloads per year](https://img.shields.io/npm/dy/@hiprax/logger?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/@hiprax/logger) [![source](https://img.shields.io/badge/source-0a0a0a?style=flat-square&logo=github&logoColor=white)](https://github.com/Hiprax/logger) | Winston-based structured logging with daily rotation, verified IANA timezones, and an Express middleware that masks secrets automatically. |
+| **[`@hiprax/errors`](https://www.npmjs.com/package/@hiprax/errors)** <br> [![npm version](https://img.shields.io/npm/v/@hiprax/errors?style=flat-square&labelColor=0a0a0a&color=6366f1&logo=npm&logoColor=white)](https://www.npmjs.com/package/@hiprax/errors) [![downloads per year](https://img.shields.io/npm/dy/@hiprax/errors?style=flat-square&labelColor=0a0a0a&color=22d3ee)](https://www.npmjs.com/package/@hiprax/errors) [![source](https://img.shields.io/badge/source-0a0a0a?style=flat-square&logo=github&logoColor=white)](https://github.com/Hiprax/errors) | Modular error handling for Express: structured, typed error classes and consistent API responses. |
+
+## ~/stack
+
+| Layer | Tools |
+| :-- | :-- |
+| **Frontend** | React · TypeScript · Next.js · Tailwind · Three.js |
+| **Backend** | Node · Express · Python · FastAPI · Django |
+| **Data** | MongoDB · Redis · PostgreSQL · MySQL · Elasticsearch |
+| **Infra** | Linux · Docker · Kubernetes · Nginx · AWS · Cloudflare · GitHub Actions |
+| **Applied AI** | RAG · agents · OpenAI · LangChain · Hugging Face · PyTorch · Whisper / voice |
+| **Security** | OWASP · OAuth / JWT · AES-GCM · Argon2id · TLS · pentesting |
+
+Vue, Svelte, Angular, Flask, PHP, and Laravel are in the toolbox too, when a project already lives there.
 
 ## ~/principles
 
@@ -114,20 +101,21 @@ I build and maintain free, public npm packages, several under the **[`@hiprax`](
 
 ## ~/connect
 
-I'm open to full-time roles, contracts, and interesting collaborations, remote or here in Spain. The fastest way to reach me is LinkedIn or email.
+Open to full-time roles, contracts, and the occasional interesting collaboration. I work remotely with teams anywhere.
 
-<!--
-  Résumé: drop a hosted CV link here and I'll wire it into the top bar too, for example:
-  <a href="https://your-cv-link.pdf"><img alt="Resume (PDF)" height="28" src="https://img.shields.io/badge/R%C3%A9sum%C3%A9-PDF-6366F1?style=for-the-badge&logo=readme&logoColor=white" /></a>
--->
+The fastest way to reach me is email. Tell me what you're building, what it runs on, and what's currently on fire.
 
 <p align="center">
+  <a href="mailto:sajad@hiprax.com"><img alt="Email" height="28" src="https://img.shields.io/badge/sajad@hiprax.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
   <a href="https://linkedin.com/in/sajadkhmz"><img alt="LinkedIn" height="28" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="mailto:info@hiprax.com"><img alt="Email" height="28" src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 </p>
 
 <div align="center">
   <img alt="Divider" src="assets/divider.svg" width="100%" />
   <br /><br />
-  <sub>Designed and built by me. Every animation respects <code>prefers-reduced-motion</code>.</sub>
+  <sub>
+    Three hand-written SVGs and a few live npm badges. No stats card, no streak counter, no snake.<br />
+    Every animation is CSS and respects <code>prefers-reduced-motion</code>.<br />
+    The stats card is missing on purpose: almost everything I build is under NDA in private repos, so it would only ever measure the sliver that isn't.
+  </sub>
 </div>
